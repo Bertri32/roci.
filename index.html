@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 4 Meses Amor</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            background-attachment: fixed;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes floating {
+            from {transform: translateY(100vh); opacity: 1;}
+            to {transform: translateY(-100vh); opacity: 0;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff4d4d;
+            clip-path: polygon(50% 0%, 61% 12%, 75% 12%, 87% 25%, 87% 38%, 75% 50%, 50% 75%, 25% 50%, 13% 38%, 13% 25%, 25% 12%, 39% 12%);
+            opacity: 0.8;
+            animation: floating 6s linear infinite;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff4d4d, #ff8585);
+            color: white;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .love-message {
+            font-size: 22px;
+            color: #d63384;
+            margin-top: 20px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .letter-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background: #ff4d4d;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .letter-button:hover {
+            background: #d63384;
+            transform: scale(1.05);
+        }
+
+        .letter-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .letter-modal.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .message {
+            font-size: 20px;
+            color: #d63384;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .close-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: #d63384;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .close-button:hover {
+            background: #b52d6f;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        ¡Feliz 4 Meses, Amor! ❤️
+    </header>
+    <div class="container">
+        <h2 style="color: #ff4d4d; font-weight: 600;">Te Amo Demasiado</h2>
+        <p class="love-message">Felices 4 meses, amor mío. Gracias por cada momento a tu lado, eres lo mejor que me ha pasado. Por muchos meses y años más juntos. ❤️</p>
+        <button class="letter-button" onclick="openLetter()">Carta para el amor de mi vida 💌</button>
+    </div>
+
+    <!-- Modal Carta -->
+    <div class="overlay" id="overlay"></div>
+    <div class="letter-modal" id="letterModal">
+        <p class="message">Bueno amor mio, no se como empezar esto, primero que nada ojala que te guste la sorpresita, la hice con mucho amor.
+            Segundo ya 4 meses al lado del amor de mi vida. No puedo estar más agradecido de tener una novia como vos, tenes todo para hacerme feliz, me entendes, me amas, sos todo para mí. 4 meses en los que me levanto y la primera persona en la que pienso es en vos y decirle buenos días. Gracias a Dios que esa persona sos vos. Quiero que sepas (aunque ya lo sabes) que sos muy especial para mí, sos la persona que quiero conmigo para el resto de mi vida.
+            <br><br>
+            TE AMO CON TODO MI COCORO.
+            <br>
+            Amo tus besitos, tus abrazos, todo de vos.
+            <br>
+            A por más meses juntos y OJALA AÑOS.
+            <br>
+            Te amo pupina hermosa ❤️
+        </p>
+        <button class="close-button" onclick="closeLetter()">Cerrar</button>
+    </div>
+
+    <!-- Corazones flotantes -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
+
+    <script>
+        function openLetter() {
+            document.getElementById('letterModal').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function closeLetter() {
+            document.getElementById('letterModal').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
